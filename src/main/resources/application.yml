@@ -1,3 +1,9 @@
 spring:
+  profiles:
+    active: dev
   application:
     name: deepstack-travel
+
+jwt:
+  secret: a2RhbXNjbmFzbGNuYXNka2NuYXNkbmNuYXNkbmNuYXNkbmNuYXNkbmNuYXNkY25hc2RuY25hc2RuY25hc2RuY25hc2RuY2E=
+  token-validity-in-seconds: 86400
