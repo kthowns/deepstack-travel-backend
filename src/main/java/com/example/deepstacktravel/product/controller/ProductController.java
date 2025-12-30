@@ -6,7 +6,6 @@ import com.example.deepstacktravel.product.dto.SearchRequest;
 import com.example.deepstacktravel.product.service.CategoryService;
 import com.example.deepstacktravel.product.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
-@SecurityRequirement(name = "Authorization")
 public class ProductController {
 
     private final ProductService productService;
