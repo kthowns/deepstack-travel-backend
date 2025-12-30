@@ -6,8 +6,9 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-deploy-main:
     runs-on: ubuntu-latest
+    environment: deeptrack-travel-backend
     
     steps:
     - name: Checkout
@@ -62,7 +63,9 @@ jobs:
           # Create .env file from secrets
           echo "DB_URL=${{ secrets.DB_URL }}" > .env
           echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_ROOT_PASSWORD=${{ secrets.DB_ROOT_PASSWORD }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "DOCKERHUB_USERNAME"=${{ secrets.DOCKERHUB_USERNAME }}" >> .env
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
           echo "JWT_EXPIRATION_SECONDS=${{ secrets.JWT_EXPIRATION_SECONDS }}" >> .env
           
