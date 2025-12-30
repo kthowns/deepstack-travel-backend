@@ -43,7 +43,6 @@ jobs:
       with:
         context: .
         push: true
-        # Push the image to Docker Hub
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/deepstack-travel-backend:latest
 
     - name: Deploy to EC2
