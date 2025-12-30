@@ -1,9 +1,14 @@
 spring:
-  profiles:
-    active: dev
+  #profiles:
+    #active: dev
   application:
     name: deepstack-travel
-
-jwt:
-  secret: a2RhbXNjbmFzbGNuYXNka2NuYXNkbmNuYXNkbmNuYXNkbmNuYXNkbmNuYXNkY25hc2RuY25hc2RuY25hc2RuY25hc2RuY2E=
-  token-validity-in-seconds: 86400
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
