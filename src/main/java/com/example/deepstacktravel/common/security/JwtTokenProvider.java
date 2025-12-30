@@ -55,10 +55,10 @@ public class JwtTokenProvider {
         Date validity = new Date(now + this.tokenValidityInMilliseconds);
 
         return Jwts.builder()
-                .setSubject(authentication.getName())
+                .subject(authentication.getName())
                 .claim(AUTHORITIES_KEY, authorities)
                 .signWith(key)
-                .setExpiration(validity)
+                .expiration(validity)
                 .compact();
     }
 
