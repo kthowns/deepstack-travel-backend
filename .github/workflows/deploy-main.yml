@@ -69,10 +69,10 @@ jobs:
           echo "JWT_EXPIRATION_SECONDS=${{ secrets.JWT_EXPIRATION_SECONDS }}" >> .env
           
           # Pull latest images
-          docker-compose pull
+          docker compose pull
           
           # Stop and restart services
-          docker-compose up -d --force-recreate
+          docker compose up -d --force-recreate
           
           # Remove unused images
           docker image prune -f
