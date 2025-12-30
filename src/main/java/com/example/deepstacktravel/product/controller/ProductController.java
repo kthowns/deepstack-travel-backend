@@ -2,6 +2,7 @@ package com.example.deepstacktravel.product.controller;
 
 import com.example.deepstacktravel.product.dto.CategoryResponse;
 import com.example.deepstacktravel.product.dto.ProductResponse;
+import com.example.deepstacktravel.product.dto.SearchRequest;
 import com.example.deepstacktravel.product.service.CategoryService;
 import com.example.deepstacktravel.product.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -28,6 +29,13 @@ public class ProductController {
             @RequestParam(required = false) Long lastId,
             @RequestParam(defaultValue = "10") int size) {
         List<ProductResponse> products = productService.getProducts(category, lastId, size);
+        return ResponseEntity.ok(products);
+    }
+
+    @Operation(summary = "상품 검색", description = "각 파라미터를 기준으로 상품을 검색")
+    @GetMapping("/api/products/search")
+    public ResponseEntity<List<ProductResponse>> searchProducts(SearchRequest searchRequest) {
+        List<ProductResponse> products = productService.searchProducts(searchRequest);
         return ResponseEntity.ok(products);
     }
 
