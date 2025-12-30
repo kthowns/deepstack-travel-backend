@@ -7,19 +7,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-    show-sql: true
 
 jwt:
   secret: ${JWT_SECRET}
   token-validity-in-seconds: ${JWT_TOKEN_VALIDITY_IN_SECONDS}
-
-logging:
-  level:
-    root: INFO
-    org.springframework.web: INFO
-    com.example.deepstacktravel: INFO
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"

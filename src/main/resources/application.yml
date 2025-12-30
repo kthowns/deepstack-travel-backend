@@ -1,14 +1,18 @@
 spring:
   #profiles:
-    #active: dev
+  #  active: dev
   application:
     name: deepstack-travel
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    hibernate:
-      ddl-auto: update
+    show-sql: true
     properties:
       hibernate:
+        highlight_sql: true
+        use_sql_comments: true
         format_sql: true
-    show-sql: true
+  jackson:
+    time-zone: Asia/Seoul
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  port: 8080

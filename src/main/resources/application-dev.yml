@@ -7,17 +7,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-    show-sql: true
 
 jwt:
   secret: TmrLcLhOZqEMjsBC8Z77bqHso90MpOAoUqzbOaxIQVZAjL6gAZCdXijyQVzzN5TQeuNG48ykb1WLkuI3MmTkYPrXsmai3kBOELy0vc
   token-validity-in-seconds: 840000
-
-logging:
-  level:
-    root: INFO
-    org.springframework.web: INFO
-    com.example.deepstacktravel: INFO
