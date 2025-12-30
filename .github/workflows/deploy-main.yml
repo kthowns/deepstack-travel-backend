@@ -43,7 +43,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/deepstack-travel-backend
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/deepstack-travel-backend:latest
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
